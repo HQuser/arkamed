@@ -16,8 +16,7 @@ def save_json(file_name, json_data):
 
 
 def read_json(file_name):
-    path = Path(__file__).parent / (
-                "../../discovery/research/data/" + file_name)
+    path = str(Path(__file__).parent.parent.parent) + "/research/data/" + file_name
 
     with open(path, 'r') as openfile:
         # Reading from json file
