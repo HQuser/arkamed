@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -128,17 +127,20 @@ STATICFILES_DIRS = [
 ]
 
 # MY settings
-CORS_ORIGIN_WHITELIST = [
+# CORS_ORIGIN_WHITELIST = [
 
-    'http://localhost',
+#     'http://localhost',
 
-    'localservername',
+#     'localservername',
 
-    'http://localservername',
+#     'http://localservername',
 
-    '127.0.0.1'
+#     '127.0.0.1'
 
-]
+# ]
+
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
 
 import django_on_heroku
 django_on_heroku.settings(locals())
