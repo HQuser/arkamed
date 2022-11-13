@@ -19,3 +19,5 @@ pillow
 django-on-heroku
 gunicorn
 wikipedia
+transformers==2.3.0
+sentence_transformers 
