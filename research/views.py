@@ -27,9 +27,9 @@ from model.myutils.data_utils import get_sentences, map_cluster_to_data_expanded
 from model.myutils.graph_builder import build_doc_graph, connect_mm_doc_to_clusters, expand_view
 from model.myutils.my_files_utils import save_json, read_json
 
-from model.research.clusters import get_agg_clust_assignment
-from model.research.embeddings import get_sentence_embedding, search_through_embeddings, get_snip_view
-from model.research.results_aggregate import get_all_vertical_results
+# from model.research.clusters import get_agg_clust_assignment
+# from model.research.embeddings import get_sentence_embedding, search_through_embeddings, get_snip_view
+# from model.research.results_aggregate import get_all_vertical_results
 
 from django.http import HttpResponse
 from django.views.decorators.clickjacking import xframe_options_exempt
