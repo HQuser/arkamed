@@ -391,41 +391,41 @@ def viz(request):
 def get_cluster_data(request):
     global USER_QUERY
     full_text_search = USER_QUERY.lower()
-    base_path = str(Path(__file__).parent.parent) + "\\research\\data\\"
+    base_path = str(Path(__file__).parent.parent) + "/research/data/"
     folder = ''
     if full_text_search == 'animals in jungle':
-        folder = 'animals_in_jungle\\'
+        folder = 'animals_in_jungle/'
 
     if full_text_search == 'cricket world cup':
-        folder = 'cricket_world_cup\\'
+        folder = 'cricket_world_cup/'
 
     if full_text_search == 'football sports':
-        folder = 'football_sports\\'
+        folder = 'football_sports/'
 
     if full_text_search == 'global climate':
-        folder = 'global climate\\'
+        folder = 'global climate/'
 
     if full_text_search == 'health advancements':
-        folder = 'health_advancements\\'
+        folder = 'health_advancements/'
 
     if full_text_search == 'high speed cars':
-        folder = 'high_speed_cars\\'
+        folder = 'high_speed_cars/'
 
     if full_text_search == 'investment and cryptography':
-        folder = 'investment_and_cryptography\\'
+        folder = 'investment_and_cryptography/'
 
     if full_text_search == 'latest global affairs':
-        folder = 'latest_global_affairs\\'
+        folder = 'latest_global_affairs/'
 
     if full_text_search == 'piano instrument':
-        folder = 'piano_instrument\\'
+        folder = 'piano_instrument/'
 
     if full_text_search == 'nasa technology':
-        folder = 'nasa_technology\\'
+        folder = 'nasa_technology/'
 
     G = ""
     with open(base_path + folder + "newdatatrimmedfixedNEW.json") as f:
-        # with open("D:\\Backup\\PycharmProjects\\F1\\untitled\\research\\newdatatrimmedfixedNEW.json") as f:
+        # with open("D:/Backup/PycharmProjects/F1/untitled/research/newdatatrimmedfixedNEW.json") as f:
         js_graph = json.load(f)
         G = nx.json_graph.node_link_graph(js_graph)
 
@@ -532,41 +532,41 @@ def get_cluster_data(request):
 def get_clusters(request):
     global USER_QUERY
     full_text_search = USER_QUERY.lower()
-    base_path = str(Path(__file__).parent.parent) + "\\research\\data\\"
+    base_path = str(Path(__file__).parent.parent) + "/research/data/"
     folder = ''
     if full_text_search == 'animals in jungle':
-        folder = 'animals_in_jungle\\'
+        folder = 'animals_in_jungle/'
 
     if full_text_search == 'cricket world cup':
-        folder = 'cricket_world_cup\\'
+        folder = 'cricket_world_cup/'
 
     if full_text_search == 'football sports':
-        folder = 'football_sports\\'
+        folder = 'football_sports/'
 
     if full_text_search == 'global climate':
-        folder = 'global climate\\'
+        folder = 'global_climate/'
 
     if full_text_search == 'health advancements':
-        folder = 'health_advancements\\'
+        folder = 'health_advancements/'
 
     if full_text_search == 'high speed cars':
-        folder = 'high_speed_cars\\'
+        folder = 'high_speed_cars/'
 
     if full_text_search == 'investment and cryptography':
-        folder = 'investment_and_cryptography\\'
+        folder = 'investment_and_cryptography/'
 
     if full_text_search == 'latest global affairs':
-        folder = 'latest_global_affairs\\'
+        folder = 'latest_global_affairs/'
 
     if full_text_search == 'piano instrument':
-        folder = 'piano_instrument\\'
+        folder = 'piano_instrument/'
 
     if full_text_search == 'nasa technology':
-        folder = 'nasa_technology\\'
+        folder = 'nasa_technology/'
 
     G = ""
-    with open(base_path + folder + "\\newdatatrimmedfixedNEW.json") as f:
-        # with open("D:\\Backup\\PycharmProjects\\F1\\untitled\\research\\newdatatrimmedfixedNEW.json") as f:
+    with open(base_path + folder + "newdatatrimmedfixedNEW.json") as f:
+        # with open("D:/Backup/PycharmProjects/F1/untitled/research/newdatatrimmedfixedNEW.json") as f:
         js_graph = json.load(f)
         G = nx.json_graph.node_link_graph(js_graph)
 
@@ -622,7 +622,11 @@ def get_clusters(request):
         # if limit == 4:
         #     break
 
-    return JsonResponse({'success': True, 'data': tree_struct})
+    response = JsonResponse({'success': True, 'data': tree_struct})
+    response['Access-Control-Allow-Origin'] = '*'
+
+    return response
+
 # TODO Hide explore more cluster when it is empty
 # Case 1: When it is all empty including no further multimedia documents to explore
 # Case2: When only explore more cluster is empty yet there are multimedia documents further to explore

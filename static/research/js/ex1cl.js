@@ -28,12 +28,15 @@ var Log = {
 var json_history = [];
 
 $.ajax({
-    url: 'http://127.0.0.1:8000/get_clusters',
+    url: 'https://hquser-laughing-memory-6wpr9q5x4v3xx9x-8000.preview.app.github.dev/get_clusters',
     type: 'GET',
+    // dataType: 'jsonp',
+    data: 22,
     async: false,
     cache: false,
     timeout: 30000,
     fail: function () {
+        console.log('failed');
         return true;
     },
     success: function (msg) {
@@ -111,7 +114,7 @@ function init() {
             console.log(node);
             // id = node.id;
             if (node.id.endsWith('c')) {
-                $.get("http://127.0.0.1:8000/get_clust_data?id=" + node.id, function (data, status) {
+                $.get("https://hquser-laughing-memory-6wpr9q5x4v3xx9x-8000.preview.app.github.dev/get_clust_data?id=" + node.id, function (data, status) {
                     // alert("Data: " + data + "\nStatus: " + status);
                     console.log(data.data);
                     json_history.push(data.data);
