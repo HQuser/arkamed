@@ -16,25 +16,6 @@
     <script
     src="{% static 'research/js/jquery-3.5.1.min.js' %}"></script>
 
-    {#    <!-- Begin Inspectlet Asynchronous Code -->#}
-    <script>UST_CT = [];
-    UST = {
-        s: Date.now(), addTag: function (tag) {
-            UST_CT.push(tag)
-        }
-    };
-    (function () {
-        var ust_s = document.createElement('STYLE');
-        ust_s.id = 'ust_body_style';
-        ust_s.appendChild(document.createTextNode('body {visibility: hidden}'));
-        document.head.appendChild(ust_s);
-    })();
-    setTimeout(function () {
-        var el = document.getElementById('ust_body_style');
-        el && el.remove()
-    }, 800);</script>
-    <script src="http://localhost/userTrack/server/ab/127.0.0.1:8000.ab.js?v=3.2.2" defer></script>
-    <script src="http://localhost/userTrack/server/ust.min.js?v=3.2.2" async></script>
 </head>
 <!-- JIT Library File -->
 <script language="javascript" type="text/javascript" src="{% static 'research/js/jit.js' %}"></script>

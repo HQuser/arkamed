@@ -28,7 +28,7 @@ var Log = {
 var json_history = [];
 
 $.ajax({
-    url: 'https://hquser-laughing-memory-6wpr9q5x4v3xx9x-8000.preview.app.github.dev/get_clusters',
+    url: '/get_clusters',
     type: 'GET',
     // dataType: 'jsonp',
     data: 22,
