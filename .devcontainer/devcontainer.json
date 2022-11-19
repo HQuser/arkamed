@@ -1,3 +1,3 @@
 {
-  "postCreateCommand": "pip3 install -r requirements.txt && python manage.py runserver"
+  "postCreateCommand": "python manage.py runserver"
 }
