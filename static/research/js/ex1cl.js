@@ -114,7 +114,7 @@ function init() {
             console.log(node);
             // id = node.id;
             if (node.id.endsWith('c')) {
-                $.get("https://hquser-laughing-memory-6wpr9q5x4v3xx9x-8000.preview.app.github.dev/get_clust_data?id=" + node.id, function (data, status) {
+                $.get("/get_clust_data?id=" + node.id, function (data, status) {
                     // alert("Data: " + data + "\nStatus: " + status);
                     console.log(data.data);
                     json_history.push(data.data);
