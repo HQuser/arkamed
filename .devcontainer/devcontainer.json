@@ -2,5 +2,5 @@
   "image": "mcr.microsoft.com/devcontainers/universal:2",
   "features": {
   },
-  "postCreateCommand": "python manage.py runserver"
+  "postCreateCommand": "pip3 install --user -r requirements.txt && python manage.py runserver"
 }
